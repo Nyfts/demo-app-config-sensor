@@ -13,7 +13,7 @@ export default function InputText({ name, isLogin, icon, label, ...rest }) {
     borderLeft: "none",
     borderRadius: 0,
     fontSize: "14px",
-    padding: "13px",
+    padding: "10px",
     border: '1px solid #b0b0b0',
     borderRadius: '5px'
   };

@@ -1,0 +1,16 @@
+.section-wrapper {
+  margin: 15px 0 20px;
+  border: 1px solid #b0b0b0;
+  border-radius: 5px;
+  padding: 0 15px 15px;
+  background-color: #fbfbfb;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #000;
+  background-color: #fbfbfb;
+}
