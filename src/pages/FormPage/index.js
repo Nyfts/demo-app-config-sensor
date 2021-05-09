@@ -142,12 +142,51 @@ function FormPage() {
           <TextInput name="transmissao.relacao" label="Relação" required />
           <TextInput name="transmissao.numeroEixos" label="Nº de Eixos" required />
           <div>radio buttons redutor</div>
-          <div>radio buttons entrada</div>
-          <div>radio buttons intermediário 1</div>
-          <div>radio buttons intermediário 2</div>
-          <div>radio buttons intermediário 3</div>
-          <div>radio buttons intermediário 4</div>
-          <div>radio buttons saída</div>
+
+          <SubSection title="Entrada" row >
+            <TextInput name="transmissao.entrada.rpm" label="RPM" />
+            <TextInput name="transmissao.entrada.rolLA" label="Rol. LA" />
+            <TextInput name="transmissao.entrada.rolLOA" label="Rol. LOA" />
+            <TextInput name="transmissao.entrada.zPinhao" label="Z Pinhão" />
+            <TextInput name="transmissao.entrada.zCoroa" label="Z Coroa" />
+          </SubSection>
+
+          <SubSection title="Intermediário 1" row >
+            <TextInput name="transmissao.intermediario1.rolLA" label="Rol. LA" />
+            <TextInput name="transmissao.intermediario1.rolLOA" label="Rol. LOA" />
+            <TextInput name="transmissao.intermediario1.zPinhao" label="Z Pinhão" />
+            <TextInput name="transmissao.intermediario1.zCoroa" label="Z Coroa" />
+          </SubSection>
+
+          <SubSection title="Intermediário 2" row >
+            <TextInput name="transmissao.intermediario2.rolLA" label="Rol. LA" />
+            <TextInput name="transmissao.intermediario2.rolLOA" label="Rol. LOA" />
+            <TextInput name="transmissao.intermediario2.zPinhao" label="Z Pinhão" />
+            <TextInput name="transmissao.intermediario2.zCoroa" label="Z Coroa" />
+          </SubSection>
+
+          <SubSection title="Intermediário 3" row >
+            <TextInput name="transmissao.intermediario3.rolLA" label="Rol. LA" />
+            <TextInput name="transmissao.intermediario3.rolLOA" label="Rol. LOA" />
+            <TextInput name="transmissao.intermediario3.zPinhao" label="Z Pinhão" />
+            <TextInput name="transmissao.intermediario3.zCoroa" label="Z Coroa" />
+          </SubSection>
+
+          <SubSection title="Intermediário 4" row >
+            <TextInput name="transmissao.intermediario4.rolLA" label="Rol. LA" />
+            <TextInput name="transmissao.intermediario4.rolLOA" label="Rol. LOA" />
+            <TextInput name="transmissao.intermediario4.zPinhao" label="Z Pinhão" />
+            <TextInput name="transmissao.intermediario4.zCoroa" label="Z Coroa" />
+          </SubSection>
+
+          <SubSection title="Saída" row >
+            <TextInput name="transmissao.saida.rpm" label="RPM" />
+            <TextInput name="transmissao.saida.rolLA" label="Rol. LA" />
+            <TextInput name="transmissao.saida.rolLOA" label="Rol. LOA" />
+            <TextInput name="transmissao.saida.zPinhao" label="Z Pinhão" />
+            <TextInput name="transmissao.saida.zCoroa" label="Z Coroa" />
+          </SubSection>
+
         </SubSection>
       </Section>
 
