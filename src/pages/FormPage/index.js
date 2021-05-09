@@ -128,10 +128,59 @@ function FormPage() {
       </Section>
 
       <Section title="SUBCONJUNTO - TRANSMISSÃO">
-        <div>radio buttons acoplamento</div>
-        <div>radio buttons eixo cardan</div>
-        <div>radio buttons Potias / Correias</div>
-        <div>radio buttons Coroa / Corrente</div>
+        <SubSection title="Acoplamento">
+          <RadioInput name="transmissao.acoplamento" label="Acoplamento" row required options={
+            [
+              { id: "rigidoFixacaoParafuso", value: "rigidoFixacaoParafuso", label: "Rígido fixação por parafuso" },
+              { id: "elasticoFlexivel", value: "elasticoFlexivel", label: "Elástico Flexível" },
+              { id: "engrenagemGrade", value: "engrenagemGrade", label: "Engrenagem com grade" },
+              { id: "dentesArqueadoLuva", value: "dentesArqueadoLuva", label: "Dentes arqueado c/ luva" },
+              { id: "elasticoPinos", value: "elasticoPinos", label: "Elástico de pinos" },
+              { id: "elasticoGarras", value: "elasticoGarras", label: "Elástico de garras" },
+              { id: "hidraulico", value: "hidraulico", label: "Hidráulico" },
+              { id: "outrosTipos", value: "outrosTipos", label: "Outro(s) tipo(s) não contemplado nesta FCE" },
+            ]
+          }/>
+          <TextInput name="transmissao.marca" label="Marca" required />
+          <TextInput name="transmissao.modelo" label="Modelo" required />
+        </SubSection>
+
+        <SubSection title="Eixo Cardan">
+          <RadioInput name="transmissao.acoplamento" label="Acoplamento" row required options={
+            [
+              { id: "acionamentoAngulo", value: "acionamentoAngulo", label: "Acionamento em ângulo" },
+              { id: "acionamentoReto", value: "acionamentoReto", label: "Acionamento reto" },
+              { id: "eixoEspacador", value: "eixoEspacador", label: "Eixo espaçador" },
+            ]
+          }/>
+        </SubSection>
+        
+        <SubSection title="Potias / Correias" row>
+          <RadioInput name="transmissao.tipoPolia" row required options={
+            [
+              { id: "tipoPolia1", value: "tipoPolia1", label: "Tipo polia 1" },
+              { id: "tipoPolia2", value: "tipoPolia2", label: "Tipo polia 2" },
+            ]
+          }/>
+          <TextInput name="transmissao.motriz" label="Motriz (d1)" required />
+          <TextInput name="transmissao.movida" label="Movida (d2)" required />
+          <TextInput name="transmissao.relacao" label="Relação" required />
+          <TextInput name="transmissao.entreEixos" label="Entre Eixos (L)" required />
+          <TextInput name="transmissao.numCorreias" label="Nº de Correias" required />
+        </SubSection>
+        
+        <SubSection title="Coroa / Corrente" row>
+          <RadioInput name="transmissao.tipoPolia" row required options={
+            [
+              { id: "tipoCoroa1", value: "tipoCoroa1", label: "Tipo coroa 1" },
+              { id: "tipoCoroa2", value: "tipoCoroa2", label: "Tipo coroa 2" },
+            ]
+          }/>
+          <TextInput name="transmissao.dentesMatriz" label="Dentes da Engrenagem Matriz (Z1)" required />
+          <TextInput name="transmissao.dentesMotora" label="Dentes da Engrenagem Motora (Z2)" required />
+          <TextInput name="transmissao.relacao2" label="Relação" required />
+          <TextInput name="transmissao.entreEixos2" label="Entre Eixos (L)" required />
+        </SubSection>
 
         <SubSection title="Redutor">
           <TextInput name="transmissao.descricao" label="Descrição" required />
@@ -141,7 +190,18 @@ function FormPage() {
           <TextInput name="transmissao.numeroSerie" label="Número de Série" />
           <TextInput name="transmissao.relacao" label="Relação" required />
           <TextInput name="transmissao.numeroEixos" label="Nº de Eixos" required />
-          <div>radio buttons redutor</div>
+          
+          
+          <RadioInput name="transmissao.TipoRedutor" row label="Tipo Redutor" options={
+            [
+              { id: "redutorParalelo", value: "redutorParalelo", label: "Redutor Paralelo" },
+              { id: "redutorHelicoidal", value: "redutorHelicoidal", label: "Redutor Helicoidal" },
+              { id: "redutorCicloidal", value: "redutorCicloidal", label: "Redutor Cicloidal" },
+              { id: "redutorPlanetario", value: "redutorPlanetario", label: "Redutor Planetário" },
+              { id: "eixoSemFim", value: "eixoSemFim", label: "Eixo Sem - Fim" },
+              { id: "outroTipoRedutor", value: "outroTipoRedutor", label: "Outro" },
+            ]
+          }/>
 
           <SubSection title="Entrada" row >
             <TextInput name="transmissao.entrada.rpm" label="RPM" />
@@ -196,9 +256,40 @@ function FormPage() {
           <TextInput name="carga.bomba.tag" label="TAG" required />
           <TextInput name="carga.bomba.marca" label="Marca" required />
           <TextInput name="carga.bomba.modelo" label="Modelo" required />
-          <div>radio buttons tipo</div>
-          <div>radio buttons estagio</div>
-          <div>radio buttons lubrificação</div>
+          
+          <RadioInput name="carga.tipo" row label="Tipo" options={
+            [
+              { id: "engrenagens", value: "engrenagens", label: "Engrenagens" },
+              { id: "lobulos", value: "lobulos", label: "Lóbulos" },
+              { id: "parafusos", value: "parafusos", label: "Parafusos" },
+              { id: "rotorPaletas", value: "rotorPaletas", label: "Rotor / Paletas" },
+              { id: "eixosExcentrico", value: "eixosExcentrico", label: "Eixo Excêntrico" },
+              { id: "pistao", value: "pistao", label: "Pistão" },
+            ]
+          }/>
+
+          <RadioInput name="carga.bomba.estagio" row label="Lubrificação" options={
+            [
+              { id: "simplesEstagio", value: "simplesEstagio", label: "Simples Estágio" },
+              { id: "multiplosEstagio", value: "multiplosEstagio", label: "Múltiplos Estágio" },
+            ]
+          }/>
+
+          <SubSection title="Lubrificação" row >
+            <RadioInput name="carga.bomba.lubrificacao" options={
+              [
+                { id: "oleo", value: "oleo", label: "Óleo" },
+                { id: "graxa", value: "graxa", label: "Graxa" },
+              ]
+            }/>
+            <RadioInput name="carga.bomba.lubrificacaoTipo" options={
+                [
+                  { id: "comPinoGraxeiro", value: "comPinoGraxeiro", label: "Com pino graxeiro" },
+                  { id: "semPinoGraxeiro", value: "semPinoGraxeiro", label: "Sem pino graxeiro" },
+                ]
+            }/>
+          </SubSection>
+
         </SubSection>
 
         <SubSection title="Ventilador / Exautos">
@@ -208,8 +299,29 @@ function FormPage() {
           <TextInput name="carga.ventilador.modelo" label="Modelo" />
           <TextInput name="carga.ventilador.rotor" label="0 do Rotor" />
           <TextInput name="carga.ventilador.numPas" label="Número de Pás" />
-          <div>radio buttons tipo</div>
-          <div>radio buttons lubrificação</div>
+          
+          <RadioInput name="carga.ventilador.lubrificacao" row options={
+            [
+              { id: "noBalanco", value: "noBalanco", label: "Em Balanço" },
+              { id: "entreMancais", value: "entreMancais", label: "Entre Mancais" },
+              { id: "noEixoMotriz", value: "noEixoMotriz", label: "No eixo motriz" },
+            ]
+          }/>
+          
+          <SubSection title="Lubrificação" row >
+            <RadioInput name="carga.ventilador.lubrificacao" options={
+              [
+                { id: "oleo", value: "oleo", label: "Óleo" },
+                { id: "graxa", value: "graxa", label: "Graxa" },
+              ]
+            }/>
+            <RadioInput name="carga.ventilador.lubrificacaoTipo" options={
+                [
+                  { id: "comPinoGraxeiro", value: "comPinoGraxeiro", label: "Com pino graxeiro" },
+                  { id: "semPinoGraxeiro", value: "semPinoGraxeiro", label: "Sem pino graxeiro" },
+                ]
+            }/>
+          </SubSection>
         </SubSection>
 
         <SubSection title="Compressor">
@@ -217,8 +329,35 @@ function FormPage() {
           <TextInput name="carga.compressor.tag" label="TAG" required />
           <TextInput name="carga.compressor.marca" label="Marca" required />
           <TextInput name="carga.compressor.modelo" label="Modelo" required />
-          <div>radio buttons carga</div>
-          <div>radio buttons tipo</div>
+          
+          <RadioInput name="carga.compressor.carga" label="Carga" row options={
+            [
+              { id: "ar", value: "ar", label: "Ar" },
+              { id: "nh3", value: "nh3", label: "NH3" },
+              { id: "co2", value: "co2", label: "CO2" },
+              { id: "freon", value: "freon", label: "Freon" },
+              { id: "alternativo", value: "alternativo", label: "Alternativo" },
+            ]
+          }/>
+          
+          <RadioInput name="carga.compressor.tipo" label="Tipo" row options={
+            [
+              { id: "tipoV", value: "tipoV", label: "Tipo \"V\"" },
+              { id: "tipoW", value: "tipoW", label: "Tipo \"W\"" },
+              { id: "tipoI", value: "tipoI", label: "Tipo \"I\"" },
+              { id: "pistoesOpostos", value: "pistoesOpostos", label: "Pistões opostos" },
+              { id: "pistoesLinha", value: "pistoesLinha", label: "Pistões em linha" },
+              { id: "horizontal", value: "horizontal", label: "Horizontal" },
+              { id: "centrifugo", value: "centrifugo", label: "Centrífugo" },
+              { id: "simplesEstagio1", value: "simplesEstagio1", label: "Simples estágio 01 impelidor" },
+              { id: "simplesEstagio2", value: "simplesEstagio2", label: "Múltiplos estágios 2 impelidores" },
+              { id: "simplesEstagio3", value: "simplesEstagio3", label: "Múltiplos estágios 3 impelidores" },
+              { id: "simplesEstagio31", value: "simplesEstagio31", label: "Múltiplos estágios 3 impelidores" },
+              { id: "parafuso", value: "parafuso", label: "Parafuso" },
+              { id: "simplesEstagio", value: "simplesEstagio", label: "Simples Estágio" },
+              { id: "multiploEstagio", value: "multiploEstagio", label: "Múltiplo Estágio" },
+            ]
+          }/>
         </SubSection>
       </Section>
 
