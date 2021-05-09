@@ -1,0 +1,25 @@
+.text-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.text-input-label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-input-container {
+  border: none;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.masked-text-input:focus {
+  outline-color: #b0b0b0;
+}
