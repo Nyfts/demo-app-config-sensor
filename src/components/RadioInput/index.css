@@ -1,0 +1,42 @@
+.radio-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+  flex: 1 1 20%;
+}
+
+.radio-input-label {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #303030;
+}
+
+.radio-input-required {
+  color: #f00;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.radio-option {
+  margin-right: 10px;
+  flex: 1 1 40%;
+}
+
+.radio-input-text {
+  margin-left: 5px;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.radio-options-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.radio-options-wrapper-row {
+  flex-direction: row;
+}

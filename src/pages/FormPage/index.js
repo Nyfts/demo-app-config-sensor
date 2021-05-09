@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import "./index.css";
 
 import TextInput from "../../components/TextInput";
+import RadioInput from "../../components/RadioInput";
 import Section from "../../components/Section";
 import SubSection from "../../components/SubSection";
 
@@ -31,7 +32,14 @@ function FormPage() {
       </Section>
 
       <Section title="SUBCONJUNTO - ACIONAMENTO">
-        <div>radio buttons mancais tipos motor</div>
+        <RadioInput name="acionamento.tipos" label="Tipos Motor" row required options={
+          [
+            { id: "motoIndução", value: "motoIndução", label: "Motor de indução" },
+            { id: "motorSincrono", value: "motorSincrono", label: "Motor Síncrono" },
+            { id: "geradorEnergia", value: "geradorEnergia", label: "Gerador de Energia" },
+            { id: "servoMotor", value: "servoMotor", label: "Servo Motor" },
+          ]
+        }/>
         <TextInput name="acionamento.descricao" label="Descrição" required />
         <TextInput name="acionamento.tag" label="TAG" required />
         <TextInput name="acionamento.fabricante" label="Fabricante" required />
@@ -48,31 +56,75 @@ function FormPage() {
           <TextInput name="acionamento.grauProtecao" label="Grau de Proteção" />
           <TextInput name="acionamento.rendimento" label="Rendimento (%)" />
           <TextInput name="acionamento.fatorServico" label="Fator de Serviço" />
-          <TextInput
-            name="acionamento.fatorPotencia"
-            label="Fator de Potência"
+          <TextInput name="acionamento.fatorPotencia" label="Fator de Potência"
           />
           <TextInput name="acionamento.categoria" label="Categoria" />
         </SubSection>
 
         <SubSection title="Mancais do Motor" row>
-          <div>radio buttons mancais</div>
+          <RadioInput name="acionamento.mancais" label="Mancais" options={
+          [
+            { id: "deslizeCasquilho", value: "deslizeCasquilho", label: "Deslize / Casquilho" },
+            { id: "rolamento", value: "rolamento", label: "Rolamento" }
+          ]
+        }/>
           <TextInput name="acionamento.LA" label="LA" />
           <TextInput name="acionamento.LOA" label="LOA" />
         </SubSection>
 
         <SubSection title="Lubrificação">
-          <div>radio buttons Mancal LA</div>
-          <div>radio buttons Mancal LOA</div>
+          <SubSection title="Mancal LA" row >
+            <RadioInput name="acionamento.mancalLa.tipo" label="Tipos Motor" options={
+              [
+                { id: "graxa", value: "graxa", label: "Graxa" },
+                { id: "oleo", value: "oleo", label: "Óleo" },
+              ]
+            }/>
+            <RadioInput name="acionamento.mancalLa.Sistema" label="Tipos Motor" row options={
+              [
+                { id: "sistemaManual", value: "sistemaManual", label: "Sistema manual" },
+                { id: "sistemaAutomatico", value: "sistemaAutomatico", label: "Sistema automático" },
+                { id: "fluxoGravidade", value: "fluxoGravidade", label: "Fluxo por gravidade" },
+                { id: "fluxoForcado", value: "fluxoForcado", label: "Fluxo forçado" },
+              ]
+            }/>
+          </SubSection>
+          <SubSection title="Mancal LOA" row >
+            <RadioInput name="acionamento.mancalLa.tipo" label="Tipos Motor" options={
+              [
+                { id: "graxa2", value: "graxa", label: "Graxa" },
+                { id: "oleo2", value: "oleo", label: "Óleo" },
+              ]
+            }/>
+            <RadioInput name="acionamento.mancalLa.Sistema" label="Tipos Motor" row options={
+              [
+                { id: "sistemaManual2", value: "sistemaManual", label: "Sistema manual" },
+                { id: "sistemaAutomatico2", value: "sistemaAutomatico", label: "Sistema automático" },
+                { id: "fluxoGravidade2", value: "fluxoGravidade", label: "Fluxo por gravidade" },
+                { id: "fluxoForcado2", value: "fluxoForcado", label: "Fluxo forçado" },
+              ]
+            }/>
+          </SubSection>
         </SubSection>
 
-        <SubSection title="Acionamento de Partida Elétrica">
-          <div>radio buttons acionamento partida elétrica</div>
-        </SubSection>
+        <RadioInput name="acionamento.partidaEletrica" label="Acionamento de Partida Elétrica" required options={
+          [
+            { id: "comandoEletromecanico", value: "comandoEletromecanico", label: "Comando Eletromecânico" },
+            { id: "softStarter", value: "softStarter", label: "Soft - Starter" },
+            { id: "inversorFrequencia", value: "inversorFrequencia", label: "Inversor de Frequência" },
+          ]
+        }/>
 
-        <SubSection title="Fixação do Motor">
-          <div>radio buttons Fixação do Motor</div>
-        </SubSection>
+        <RadioInput name="acionamento.fixacaoMotor" label="Fixação do Motor" row required options={
+          [
+            { id: "flangeadoCargaAcionada", value: "flangeadoCargaAcionada", label: "Flangeado à carga acionada" },
+            { id: "flangeadoCargaAcionadaHorizontal", value: "flangeadoCargaAcionadaHorizontal", label: "Flangeado à carga acionada horizontal" },
+            { id: "fixadoBaseMetalica", value: "fixadoBaseMetalica", label: "Fixado em base metálica" },
+            { id: "fixadoDiretoPiso", value: "fixadoDiretoPiso", label: "Fixado direto ao piso" },
+            { id: "fixadoCoxins", value: "fixadoCoxins", label: "Fixado sob coxins" },
+            { id: "fixadoMoias", value: "fixadoMoias", label: "Fixado sob moias" },
+          ]
+        }/>
       </Section>
 
       <Section title="SUBCONJUNTO - TRANSMISSÃO">

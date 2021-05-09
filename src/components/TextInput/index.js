@@ -26,7 +26,7 @@ export default function InputText({ name, isLogin, icon, label, required, ...res
 
   return (
     <div className="text-input-wrapper">
-      <span className="text-input-label">{label} <span className="text-input-required">{required && "*"}</span></span>
+      <p className="text-input-label">{label} <span className="text-input-required">{required && "*"}</span></p>
       <div className="text-input-container">
         <input className="text-input"ref={inputRef} defaultValue={defaultValue} {...rest} />
       </div>
