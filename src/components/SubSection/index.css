@@ -6,6 +6,12 @@
   border-radius: 5px;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.sub-section-wrapper-row {
+  flex-direction: row;
 }
 
 .sub-section-title {

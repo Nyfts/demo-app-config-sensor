@@ -10,7 +10,7 @@
   margin-bottom: 5px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  color: #505050;
+  color: #303030;
 }
 
 .text-input-container {
@@ -23,6 +23,22 @@
   position: relative;
 }
 
-.masked-text-input:focus {
+.text-input {
+  flex: 1;
+  border-left: none;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #b0b0b0;
+  border-radius: 5px;
+}
+
+.text-input:focus {
   outline-color: #b0b0b0;
+}
+
+.text-input-required {
+  color: #f00;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
