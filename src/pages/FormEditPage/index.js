@@ -45,6 +45,7 @@ function FormEditPage() {
   return (
     <Form ref={formRef} onSubmit={handleFormSubmit}>
       <Section title="Equipamento">
+        <TextInput name="equipamento.nome" label="Nome" />
         <TextInput name="equipamento.area" label="Area" />
         <TextInput name="equipamento.setor" label="Setor" />
         <TextInput name="equipamento.conjunto" label="Conjunto" />
@@ -180,6 +181,11 @@ function FormEditPage() {
           />
           <TextInput name="equipamento.motor.mancal.la" label="LA" />
           <TextInput
+            name="equipamento.motor.mancal.loa"
+            label="LOA"
+            type="number"
+          />
+          <TextInput
             name="equipamento.motor.mancal.lub_mancal_la"
             label="Lubrificação mancal LA"
           />
@@ -279,8 +285,8 @@ function FormEditPage() {
 
         <SubSection title="Eixo Cardan">
           <RadioInput
-            name="equipamento.transmissao.eixo_candan"
-            label="Eixo Candan"
+            name="equipamento.transmissao.eixo_cardan"
+            label="Eixo Cardan"
             row
             required
             options={[
@@ -482,6 +488,10 @@ function FormEditPage() {
 
           <SubSection title="Intermediário 1" row>
             <TextInput
+              name="equipamento.transmissao.redutor.rpm_inter1"
+              label="Rpm"
+            />
+            <TextInput
               name="equipamento.transmissao.redutor.rol_la_inter1"
               label="Rol. LA"
             />
@@ -500,6 +510,10 @@ function FormEditPage() {
           </SubSection>
 
           <SubSection title="Intermediário 2" row>
+          <TextInput
+              name="equipamento.transmissao.redutor.rpm_inter2"
+              label="Rpm"
+            />
             <TextInput
               name="equipamento.transmissao.redutor.rol_la_inter2"
               label="Rol. LA"
@@ -520,6 +534,10 @@ function FormEditPage() {
 
           <SubSection title="Intermediário 3" row>
             <TextInput
+              name="equipamento.transmissao.redutor.rpm_inter3"
+              label="Rpm"
+            />
+            <TextInput
               name="equipamento.transmissao.redutor.rol_la_inter3"
               label="Rol. LA"
             />
@@ -538,6 +556,10 @@ function FormEditPage() {
           </SubSection>
 
           <SubSection title="Intermediário 4" row>
+          <TextInput
+              name="equipamento.transmissao.redutor.rpm_inter4"
+              label="Rpm"
+            />
             <TextInput
               name="equipamento.transmissao.redutor.rol_la_inter4"
               label="Rol. LA"
@@ -583,6 +605,11 @@ function FormEditPage() {
 
       <Section title="SUBCONJUNTO - CARGA">
         <SubSection title="Bomba">
+          <TextInput
+            name="equipamento.carga.bomba.tipo"
+            label="Tipo Bomba"
+            required
+          />
           <TextInput
             name="equipamento.carga.bomba.descricao"
             label="Descrição"

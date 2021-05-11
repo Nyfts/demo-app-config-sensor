@@ -35,7 +35,7 @@
 }
 
 .list-machines-item-button {
-  padding: 0 20px;
+  padding: 10px 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   background-color: #3396FF;
@@ -60,6 +60,7 @@
 
 .return-button {
   background-color: #b0b0b0;
+  margin-left: 10px;
 }
 
 .return-button:hover {
@@ -73,4 +74,8 @@
 .hr {
   margin: 10px 0 15px;
   border-top: 1px solid #b0b0b0;
+}
+
+.list-machines-suggestion {
+  padding: 10px;
 }
