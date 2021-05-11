@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useField } from '@unform/core'
+import { useField } from '@unform/core';
 
 import "./index.css";
 
-function RadioInput({ name, label, options, required, row, ...rest }) {
+function RadioInput({ name, label, options, required, row, image, ...rest }) {
   const inputRefs = useRef([])
   const { fieldName, registerField, defaultValue = '', error } = useField(name)
 
@@ -49,6 +49,7 @@ function RadioInput({ name, label, options, required, row, ...rest }) {
             <label htmlFor={option.id} key={option.id} className="radio-input-text">
               {option.label}
             </label>
+
           </span>
         ))}
       </div>

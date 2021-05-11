@@ -5,6 +5,8 @@ import api from '../../services/api';
 
 import "./index.css";
 
+import Corrente1 from '../../assets/corrente1.png';
+
 import TextInput from "../../components/TextInput";
 import RadioInput from "../../components/RadioInput";
 import Section from "../../components/Section";
@@ -62,6 +64,7 @@ function FormPage() {
           label="Tipos Motor"
           row
           required
+          image={Corrente1}
           options={[
             {
               id: "motoIndução",
