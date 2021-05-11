@@ -1,0 +1,76 @@
+.list-machines {
+  margin: 15px 0 20px;
+  border: 1px solid #b0b0b0;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+}
+
+.list-machines-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.list-machines-item-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.list-machines-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.list-machines-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.list-machines-item-button {
+  padding: 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  background-color: #3396FF;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: .1s all linear;
+}
+
+.list-machines-item-button:hover {
+  cursor: pointer;
+  background-color: #186abc;
+  box-shadow: 5px 5px 22px -9px rgba(0,0,0,0.3);
+}
+
+.list-machines-item-button:active {
+  cursor: pointer;
+  background-color: #3396FF;
+  box-shadow: 5px 5px 22px -9px rgba(0,0,0,0);
+}
+
+.return-button {
+  background-color: #b0b0b0;
+}
+
+.return-button:hover {
+  background-color: #909090;
+}
+
+.return-button:active {
+  background-color: #b0b0b0;
+}
+
+.hr {
+  margin: 10px 0 15px;
+  border-top: 1px solid #b0b0b0;
+}
