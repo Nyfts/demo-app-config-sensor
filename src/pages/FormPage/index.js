@@ -8,22 +8,32 @@ import TextInput from "../../components/TextInput";
 import RadioInput from "../../components/RadioInput";
 import Section from "../../components/Section";
 import SubSection from "../../components/SubSection";
+import { useLoading } from "../../contexts/loading";
 
 function FormPage() {
   const formRef = useRef();
   const history = useHistory();
+  const loading = useLoading();
 
   const handleFormSubmit = async (data) => {
-    var myHeaders = new Headers();
-    myHeaders.set('Content-Type', 'application/json');
+    try {
+      loading.showLoading();
+      
+      let headers = new Headers();
+      headers.set('Content-Type', 'application/json');
 
-    const response = await fetch('http://localhost:5000/main/api/v1/cadastro', {
-      method: 'POST',
-      body: data,
-      headers: myHeaders
-    })
+      const response = await fetch('http://localhost:5000/main/api/v1/cadastro', {
+        method: 'POST',
+        body: data,
+        headers: headers
+      })
 
-    console.log(response);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      loading.hideLoading();
+    }
   };
 
   const handleReturn = () => {
@@ -289,8 +299,8 @@ function FormPage() {
           <SubSection title="Lubrificação" row >
             <RadioInput name="carga.ventilador.lub" options={
               [
-                { id: "oleo", value: "oleo", label: "Óleo" },
-                { id: "graxa", value: "graxa", label: "Graxa" },
+                { id: "ventiladorLubOleo", value: "oleo", label: "Óleo" },
+                { id: "ventiladorLubGraxa", value: "graxa", label: "Graxa" },
               ]
             }/>
             {/* <RadioInput name="carga.ventilador.lubrificacaoTipo" options={
@@ -307,15 +317,15 @@ function FormPage() {
             [
               { id: "oleoLubrificante", value: "oleoLubrificante", label: "Óleo Lubrificante" },
               { id: "oleoHidraulico", value: "oleoHidraulico", label: "Óleo Hidráulico" },
-              { id: "graxa", value: "graxa", label: "Graxa" },
+              { id: "coletaLubGraxa", value: "graxa", label: "Graxa" },
             ]
           }/>
 
-          <TextInput name="carga.coleta_lub.nome_comercial" label="Nome Comercial" required />
-          <TextInput name="carga.coleta_lub.marca" label="Marca" required />
-          <TextInput name="carga.coleta_lub.caracteristicas" label="Caracteristicas" required />
-          <TextInput name="carga.coleta_lub.viscosidade" label="Viscosidade" required />
-          <TextInput name="carga.coleta_lub.ponto_coleta" label="Ponto Coleta" required />
+          <TextInput name="carga.coleta_lub.nome_comercial" label="Nome Comercial" />
+          <TextInput name="carga.coleta_lub.marca" label="Marca" />
+          <TextInput name="carga.coleta_lub.caracteristicas" label="Caracteristicas" />
+          <TextInput name="carga.coleta_lub.viscosidade" label="Viscosidade" />
+          <TextInput name="carga.coleta_lub.ponto_coleta" label="Ponto Coleta" />
         </SubSection>
       </Section>
 
