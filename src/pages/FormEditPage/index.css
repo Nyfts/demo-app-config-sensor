@@ -1,0 +1,42 @@
+.submit-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.submit-button {
+  padding: 10px 80px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  background-color: #3396FF;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: .1s all linear;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: #186abc;
+  box-shadow: 5px 5px 22px -9px rgba(0,0,0,0.3);
+}
+
+.submit-button:active {
+  cursor: pointer;
+  background-color: #3396FF;
+  box-shadow: 5px 5px 22px -9px rgba(0,0,0,0);
+}
+
+.return-button {
+  background-color: #b0b0b0;
+}
+
+.return-button:hover {
+  background-color: #909090;
+}
+
+.return-button:active {
+  background-color: #b0b0b0;
+}

@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Form } from "@unform/web";
-import { useHistory } from "react-router-dom";
-import api from '../../services/api';
+import { useHistory, useParams } from "react-router-dom";
+import api from "../../services/api";
 
 import "./index.css";
 
@@ -11,31 +11,32 @@ import Section from "../../components/Section";
 import SubSection from "../../components/SubSection";
 import { useLoading } from "../../contexts/loading";
 
-function FormPage() {
+function FormEditPage() {
   const formRef = useRef();
   const history = useHistory();
   const loading = useLoading();
+  const params = useParams();
 
-  const handleFormSubmit = async (data) => {
-    // return console.log(data)
-    try {
-      loading.showLoading();
-      
-      const response = await api.post('cadastro', data, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+  useEffect(() => {
+    (async () => {
+      try {
+        loading.showLoading();
 
-      console.log(response);
+        const response = await api.get("equipamento/" + params?.id);
 
-    } catch (error) {
-      alert("Não foi possível concluir sua solicitação");
-      console.error(error);
-    } finally {
-      loading.hideLoading();
-    }
-  };
+        formRef.current.setData(response.data);
+
+        console.log(response);
+      } catch (error) {
+        alert("Não foi possível concluir sua solicitação");
+        console.error(error);
+      } finally {
+        loading.hideLoading();
+      }
+    })();
+  }, []);
+
+  const handleFormSubmit = async (data) => {};
 
   const handleReturn = () => {
     history.push("/");
@@ -757,15 +758,19 @@ function FormPage() {
       </Section>
 
       <div className="submit-button-wrapper">
-        <button className="submit-button return-button" onClick={handleReturn} type="reset">
+        <button
+          className="submit-button return-button"
+          onClick={handleReturn}
+          type="reset"
+        >
           Voltar
         </button>
-        <button className="submit-button" type="submit">
+        {/* <button className="submit-button" type="submit">
           Salvar
-        </button>
+        </button> */}
       </div>
     </Form>
   );
 }
 
-export default FormPage;
+export default FormEditPage;

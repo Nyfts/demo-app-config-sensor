@@ -13,7 +13,7 @@ function RadioInput({ name, label, options, required, row, ...rest }) {
       name: fieldName,
       ref: inputRefs,
       getValue: refs => {
-        return refs.current.find(input => input?.checked)?.value
+        return refs.current.find(input => input?.checked)?.value || '';
       },
       setValue: (refs, id) => {
         const inputRef = refs.current.find(ref => ref.id === id)
